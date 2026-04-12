@@ -1,8 +1,6 @@
-#connecting 
 import mysql.connector as mysql
 import pandas as pd
 
-# Load the cleaned data created in the previous step
 df = pd.read_csv("netflix_titles_cleaned.csv")
 
 try:
@@ -14,7 +12,7 @@ try:
     )
     cursor = conn.cursor()
 
-    # Prepare data for batch insertion
+    #data for batch insertion
     sql = "INSERT INTO netflix (title, director, country, release_year, type) VALUES (%s, %s, %s, %s, %s)"
     values = [
         (row['title'], row['director'], row['country'], int(row['release_year']), row['type'])
