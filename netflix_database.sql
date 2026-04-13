@@ -12,10 +12,22 @@ create table netflix (
 
 select type, count(*) from netflix group by type;
 
-select country, count(*)
-from netflix
-group by country
-order by count(*) desc;
+-- Removed duplicate: select country, count(*) from netflix group by country order by count(*) desc;
 
 select release_year, count(*)
 from netflix group by release_year;
+SHOW TABLES;
+
+select * from netflix limit 10;
+select country, count(*) from netflix group by country order by count(*) desc;
+select release_year, count(*) from netflix;
+select release_year, count(*) from netflix group by release_year;
+alter table netflix add column inserted_at timestamp default current_timestamp;
+
+select release_year, count(*) from netflix where type = 'Movie' group by release_year order by release_year;
+select country, release_year, 
+count(*) 
+from netflix
+where type = 'Movie'
+group by country, release_year 
+order by release_year;
