@@ -1,8 +1,7 @@
-#step 1 : loading
 import pandas as pd
 
 df = pd.read_csv("netflix_titles.csv")
-#showing the data
+
 print(df.head())
 print(df.info())
 
