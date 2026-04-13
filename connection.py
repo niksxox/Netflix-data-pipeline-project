@@ -1,8 +1,6 @@
 
 import mysql.connector as mysql 
 
-import mysql.connector as mysql
-
 import pandas as pd
 
 df = pd.read_csv("netflix_titles_cleaned.csv")
